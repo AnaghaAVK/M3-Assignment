@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form-Validation</title>
+  <link rel="stylesheet" href="style.css" >
+  <style>
+    body{
+      background-image: url(images/Wallpaper2.png);
+    }
+    .form{
+      width:400px;
+      margin:9vh auto 0 auto;
+      background-color: #c9b7cf;
+      border-radius: 5px;
+      padding:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="index.html" id="form">
+      <h1>REGISTER</h1>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="user@gmail.com" name="email">
+        <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label for="phone">Mobile No</label>
+        <input type="text" id="phone" placeholder="000-000-0000" name="phone">
+        <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="********" name="password"  oninput="checkPasswordStrength()">
+        <div id="password-strength-meter">
+          <progress max="100" value="0" id="strength-progress"></progress>
+          <span id="warning"></span>
+        </div>
+        <div class="error"></div>
+      </div>
+      <div class="input-group">
+        <label for="cpassword">Confirm Password</label>
+        <input type="password" id="cpassword" placeholder="********" name="cpassword">
+        <div class="error"></div>
+      </div>
+      <button type="submit">Sign In</button>
+      <a href="index.html" style="margin-left:150px;">Back to Login</a> 
+      <!--  -->
+    </form>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password of User</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .card{
+      margin-top: 200px;
+      background-color: rgb(235, 186, 234);
+      border: 1px solid purple;
+      box-shadow: 10px 10px;
+      border-radius: 0%;
+    }
+    input{
+      width: 100%;
+    }
+    header{
+      background-color: rgb(222, 87, 211);
+      display: flex;
+      padding:20px ;
+    }
+    button a{
+      color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <div class="card ">
+    <div class="card-header text-center">
+      <h4>Find your Registration Details or Reset your credentials
+      </h4>
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Please enter your email address or mobile number to search for your account.</h5>
+      <input type="text" id="email" placeholder="Enter your email here" onkeyup="validateEmail()" > 
+      <span id="emailError"></span>
+    </div>
+    <div class="card-footer text-center">
+      <button><a href="index.html">Cancel</a></button>
+      <button><a href="">Search</a></button>
+    </div>
+  </div>
+  <script>
+    function validateEmail(){
+      let email = document.getElementById('email');
+      let emailError = document.getElementById('emailError');
+      let regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+      if(email.value.trim() == ''){
+        emailError.innerHTML = "Email can't be blank!";
+        return false;
+      }
+      else if(!email.value.match(regExp)){
+        emailError.innerHTML = "Email not in globalformat !";
+        return false;
+      }
+      else{
+        emailError.innerHTML = "Success!";
+        return true;
+      }
+    }
+  </script>
+</body>
+</html>
